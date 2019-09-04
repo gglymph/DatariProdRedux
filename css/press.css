@@ -1,0 +1,589 @@
+
+header{
+  
+  background-size:cover;
+  padding:20px;
+  text-align:center;
+  
+}
+body{
+  font-family: 'Lexend Exa', sans-serif;
+  /*background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/footer_lodyas.png); Bad URL Connection Check*/
+  -webkit-animation:100s scroll infinite linear;
+  -moz-animation:100s scroll infinite linear;
+  -o-animation:100s scroll infinite linear;
+  -ms-animation:100s scroll infinite linear;
+  animation:100s scroll infinite linear;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  
+}
+
+.scrolled {background-color: rgba(0,0,0,.5);}
+
+@-webkit-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-moz-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-o-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-ms-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+.my-nav {
+    background-color: black;
+}
+
+.navbar a {
+  font-size: 17px !important;
+  
+  }
+
+@media screen and (max-width:375px) {
+.navbar a {
+  font-size: 17px ;
+  
+  }
+}
+
+@media screen and (max-width:400px) {
+
+.navbar a {
+	font-size: 14px;
+  
+  }
+}
+
+@media screen and (min-width:400px) {
+
+.navbar a {
+	font-size: 14px;
+  
+  }
+}
+
+@media screen and (max-width:300px) {
+
+.navbar a {
+	font-size: 13px;
+  
+  }
+}
+
+@media screen and (min-width:300px) {
+
+.navbar a {
+	font-size: 13px;
+  
+  }
+}
+
+/* slider */
+
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus { outline: none; }
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* draggable */
+
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+          tap-highlight-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* ---- previous/next buttons ---- */
+
+.flickity-prev-next-button {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  background: hsla(0, 0%, 100%, 0.75);
+  cursor: pointer;
+  /* vertically center */
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.flickity-prev-next-button:hover { background: white; }
+
+.flickity-prev-next-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #09F;
+}
+
+.flickity-prev-next-button:active {
+  opacity: 0.6;
+}
+
+.flickity-prev-next-button.previous { left: 10px; }
+.flickity-prev-next-button.next { right: 10px; }
+/* right to left */
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: 10px;
+}
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: 10px;
+}
+
+.flickity-prev-next-button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+}
+
+.flickity-prev-next-button svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: #333;
+}
+
+/* ---- page dots ---- */
+
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+
+.flickity-rtl .flickity-page-dots { direction: rtl; }
+
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+  background: #333;
+  border-radius: 50%;
+  opacity: 0.25;
+  cursor: pointer;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
+}
+/* End Flickty */
+
+/* Begin Custom LazyFlickty */
+/* hide cells until fickity is ready -> so lazySizes doesn't load until layout is done */
+.gallery-cell {
+  width: 100%;
+  visibility: hidden;
+}
+
+.gallery-cell:first-child,
+.flickity-slider > .gallery-cell {
+  visibility: visible;
+}
+
+.ratio-box {
+  position: relative;
+  height: 0;
+  display: block;
+  width: 100%;
+  /* padding-bottom is calculated and rendered in to HTML */
+}
+
+.ratio-box > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Cards */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  background-color: #f0f0f0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.btn {
+  background-color: white;
+  border: 1px solid #cccccc;
+  color: #696969;
+  padding: 0.5rem;
+  text-transform: lowercase;
+}
+.btn--block {
+  display: block;
+  width: 100%;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cards__item {
+  display: flex;
+  padding: 1rem;
+}
+@media (min-width: 40rem) {
+  .cards__item {
+    width: 50%;
+  }
+}
+@media (min-width: 56rem) {
+  .cards__item {
+    width: 33.3333%;
+  }
+}
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.card:hover .card__image {
+  filter: contrast(100%);
+}
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(70%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+}
+.card__image::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+@media (min-width: 40rem) {
+  .card__image::before {
+    padding-top: 66.6%;
+  }
+}
+
+.card__image--vibe {
+  background-image: url(../img/press/Datari_Turner.jpg);
+}
+.card__image--bf {
+  background-image: url(../img/press/Same-Difference-film-cast.jpg);
+  background-size:cover;
+}
+.card__image--fox {
+  background-image: url(../img/press/atl.png);
+}
+.card__image--rolling {
+  background-image: url(../img/press/cast.jpg);
+}
+.card__image--deadline {
+  background-image: url(../img/press/datari-turner-3.jpg);
+}
+.card__image--necole {
+  background-image: url(../img/press/n.png);
+}
+
+.card__image--review {
+  background-image: url(../img/press/fullstage.jpg);
+}
+.card__image--black {
+  background-image: url(../img/press/aminJosephDatari.jpg);
+}
+.card__image--bet {
+  background-image: url(../img/press/lild.jpg);
+}
+
+.card__image--var {
+  background-image: url(../img/press/lebron-james.jpg);
+}
+
+.card__image--46 {
+  background-image: url(../img/press/46.png);
+  background-size:cover;
+  width: 400px;
+}
+
+
+
+.card__title {
+  color: #696969;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.card__text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+/** * Grid styles */
+
+ .video-grid.front-page {
+	 max-width: 1280px;
+	 margin: 0 auto;
+   padding: 1em 2em;
+   margin-top: 56px;
+  
+}
+ ul.video-list {
+	 display: flexbox;
+	 display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   
+}
+ li.video {
+	 flex-grow: 1;
+	 position: relative;
+	 overflow: hidden;
+	 width: 33.333333333%;
+	 width: -webkit-calc(100% / 3);
+	 width: calc(100% / 3);
+   border: solid 0.2em transparent;
+  
+}
+ li.video a {
+	 outline: none;
+}
+ li.video:before {
+	 content: '';
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 background-color: rgba(0, 0, 0, 0);
+	 transition: background-color 0.15s;
+}
+ li.video figure {
+	 display: block;
+	 position: relative;
+	 overflow: hidden;
+	 background-repeat: no-repeat;
+	 background-position: center center;
+	 background-size: cover;
+}
+ li.video figure img {
+	 display: block;
+	 max-width: 100%;
+	 height: auto;
+	 opacity: 0;
+	 transform: scale(0.5);
+	 transition: all 0.2s;
+}
+ li.video figure figcaption {
+	 position: absolute;
+	 bottom: 0;
+	 width: 100%;
+	 background: rgba(0, 0, 0, 0.6);
+	 color: #fff;
+	 font-size: 1.4rem;
+	 font-weight: 600;
+	 padding: 1rem;
+	 transform: translateY(0);
+	 opacity: 1;
+	 transition: all 0.2s;
+}
+ li.video:hover figure img {
+	 opacity: 1;
+	 transform: scale(1);
+}
+ li.video:hover figure figcaption {
+	 opacity: 0;
+	 transform: translateY(50%);
+}
+ li.video:hover:before {
+	 background-color: rgba(0, 0, 0, 0.3);
+}
+ @media screen and (max-width: 800px) {
+	 li.video {
+		 width: 50%;
+		 width: -webkit-calc(100% / 2);
+		 width: calc(100% / 2);
+	}
+}
+ @media screen and (max-width: 640px) {
+	 li.video {
+		 width: 100%;
+	}
+}
+
+
+/* Footer */
+
+
+.footer-distributed {
+  background-color: black;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+	padding: 45px 50px;
+	margin-top: 100px;
+}
+
+.footer-distributed .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff !important;
+  margin: 0 0 10px;
+  padding: 0;
+	transition: ease .25s;
+	font-family: 'Lexend Exa', sans-serif;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff !important;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff !important;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
+}
+
+.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.0;
+  }
+}
